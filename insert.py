@@ -3,18 +3,19 @@ from pymongo import MongoClient
 client = MongoClient("mongodb+srv://vasanivaidehi42_db_user:pymongo@pymongo.xaivciv.mongodb.net/")
 
 db = client["testdb"]
-collection = db["users"]
+collection = db["admin"]
 
-#data =[ {"name": "Grishma","age": 21,"city": "Rajkot"},
-#        {"name": "Palak","age": 20,"city": "Rajkot"},
-#        {"name": "Disha","age": 22,"city": "Rajkot"}
-#]
+data =[ {"name": "Aarti","city": "Rajkot","email":"G@gmail.com"},
+        {"name": "Banshi","city": "Rajkot","email":"P@gmail.com"},
+        {"name": "Mansi","city": "Rajkot","email":"D@gmail.com"}
+]
 
 #collection.insert_one(data)
-#collection.insert_many(data)
-prev={"name":"vishva"}
-nextt={"$set":{"city":"mumbai"}}
+collection.insert_many(data)
+#prev={"name":"Aarti"}
+#nextt={"$set":{"city":"surat"}}
     #collection.update_one(prev,nextt)
-up=collection.update_one(prev,nextt)
-print(up.modified_count)
-print("Data Updated Successfully ")
+#up=collection.update_one(prev,nextt)
+#print(up.modified_count)
+#print("Data Updated Successfully ")
+print("Multiple Data inserted Successfully ")
